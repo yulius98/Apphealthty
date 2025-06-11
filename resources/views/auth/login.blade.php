@@ -38,6 +38,11 @@
                     {{ __('Forgot your password?') }}
                 </a>
             @endif
+            
+             <x-secondary-button class="ms-3">
+                {{ __('Cancel') }}
+            </x-secondary-button>
+
 
             <x-primary-button class="ms-3">
                 {{ __('Log in') }}
