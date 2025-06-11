@@ -20,7 +20,7 @@ return new class extends Migration
             $table->float('tinggi_badan');
             $table->enum('aktivitas', ['jarang', 'sedang', 'aktif'])->default('jarang');
             $table->enum('alergi',['ya', 'tidak'])->default('tidak');
-            $table->enum('hasil', ['overweight', 'normal', 'underweight'])->default('normal');
+            $table->enum('hasil', ['overweight', 'normal', 'underweight'])->default('normal')->nullable();
             $table->enum('status', ['pending', 'selesai'])->default('pending');
             $table->softDeletes();
             $table->timestamps();

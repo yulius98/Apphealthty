@@ -61,7 +61,7 @@
       
   <footer class="text-center py-5">
       <div class="container px-5">
-          <div class="text-black small">
+          <div class="text-white small">
             <div class="mb-2">Nama Perusahaan</div>  
             <div class="mb-2">Alamat</div>
             <div class="mb-2">No. Telp</div>

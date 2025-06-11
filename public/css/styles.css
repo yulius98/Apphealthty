@@ -2867,11 +2867,11 @@ textarea.form-control-lg {
 
 .btn-secondary {
   --bs-btn-color: #fff;
-  --bs-btn-bg: #9f1ae2;
-  --bs-btn-border-color: #9f1ae2;
+  --bs-btn-bg: #ffd966;
+  --bs-btn-border-color: #bf9000;
   --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #8716c0;
-  --bs-btn-hover-border-color: #7f15b5;
+  --bs-btn-hover-bg: #f6b26b;
+  --bs-btn-hover-border-color: #b45f06;
   --bs-btn-focus-shadow-rgb: 173, 60, 230;
   --bs-btn-active-color: #fff;
   --bs-btn-active-bg: #7f15b5;
@@ -11163,4 +11163,34 @@ footer a:hover, footer a:active, footer a:focus {
   .masthead .masthead-device-mockup .device-wrapper {
     max-width: 17rem;
   }
+}
+
+.form-wrapper {
+  margin-top: 5rem;
+  max-width: 500px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-wrapper .form-control {
+  max-width: 300px;
+  width: 100%;
+}
+
+footer {
+  background: linear-gradient(180deg, rgba(149,217,132,1) 0%, rgba(43,101,4,0.59) 100%);
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  width: 100%;
+  text-align: center;
+  color: white;
+  flex-shrink: 0;
 }
