@@ -16,10 +16,18 @@
       <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;1,400&amp;display=swap" rel="stylesheet" />
       <!-- Core theme CSS (includes Bootstrap)-->
       <link href="css/styles.css" rel="stylesheet" />
+      
   </head>
-  <body id="page-top">
-    {{ $slot }}
-
+  <body class="h-full">
+    <div class="min-h-full">
+    <main>
+      <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+        {{ $slot }}<!-- Your content -->
+      </div>
+    </main>
+    
+  </div>
+    
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/scripts.js"></script>

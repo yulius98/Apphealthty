@@ -85,7 +85,7 @@
                                     @enderror
                                     
                                     {{-- Preview Gambar --}}
-                                    @if ($gambar instanceof \Illuminate\Http\UploadedFile)
+                                    @if ($image instanceof \Illuminate\Http\UploadedFile)
                                         <div class="mt-3">
                                             <img src="{{ $image->temporaryUrl() }}" alt="Preview Image" class="img-thumbnail object-contain rounded" style="max-height: 100px;">
                                         </div>
@@ -127,7 +127,7 @@
                 <thead>
                     <tr>
                         <th class="col-md-1">No</th>
-                        <th class="col-md-4 sort" @if ($sortcolom == 'nama_barang') {{ $sortdirection }} @endif wire:click="sort('nama_barang')">Nama Barang</th>
+                        <th class="col-md-4 sort" @if ($sortcolom == 'nama_product') {{ $sortdirection }} @endif wire:click="sort('nama_product')">Nama Barang</th>
                         <th class="col-md-2 sort" >Harga</th>
                         <th class="col-md-2 sort" >Discount</th>
                         <th class="col-md-2 sort" >Harga Diskon</th>
@@ -142,7 +142,7 @@
                     @foreach ($dtbarang as $key => $value)
                     <tr>
                         <td>{{ $dtbarang->firstItem() + $key }}</td>
-                        <td>{{ $value->nama_barang  }}</td>
+                        <td>{{ $value->nama_product  }}</td>
                         <td>{{ $value->harga }}</td>
                         <td>{{ $value->discount }}</td>
                         <td>{{ $value->harga_diskon }}</td>

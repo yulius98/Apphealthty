@@ -1,102 +1,119 @@
-    <x-leandingpage>
+<x-leandingpage>
     <x-nav-bar-home/>
-    <div class="form-wrapper">
-      <form id="FormCekGratis" class="container py-4" action="/cekgratis" method="post" enctype="multipart/form-data">
-          @csrf
-          
-          <div class="mb-3 d-flex align-items-center">
-            <label for="nama" class="form-label fw-light text-black me-2 mb-0" style="min-width: 80px;">No Reg</label>
-            <input type="text" id="registrationNumber" name="registrationNumber" readonly class="form-control">
+    <div class="container" style="max-width: 600px; margin-top: 100px;">
+        <div class="card shadow-sm shadow-black p-4">
+            <form id="FormCekGratis" action="/cekgratis" method="post" enctype="multipart/form-data">
+                @csrf
 
-            <script>
-              function generateRegistrationNumber(date = new Date()) {
-                const months = [
-                  "JAN", "FEB", "MAR", "APR", "MEI", "JUN",
-                  "JUL", "AGU", "SEP", "OKT", "NOV", "DES"
-                ];
-                const monthCode = months[date.getMonth()];
+                <div class="mb-3 row align-items-center">
+                    <label for="registrationNumber" class="col-sm-4 col-form-label fw-light text-black">No Reg</label>
+                    <div class="col-sm-8">
+                        <input type="text" id="registrationNumber" name="registrationNumber" readonly class="form-control">
+                    </div>
+                </div>
 
-                const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-                let randomPart = '';
-                for (let i = 0; i < 4; i++) {
-                  randomPart += chars.charAt(Math.floor(Math.random() * chars.length));
-                }
+                <script>
+                    function generateRegistrationNumber(date = new Date()) {
+                        const months = [
+                            "JAN", "FEB", "MAR", "APR", "MEI", "JUN",
+                            "JUL", "AGU", "SEP", "OKT", "NOV", "DES"
+                        ];
+                        const monthCode = months[date.getMonth()];
 
-                return `${monthCode}-${randomPart}`;
-              }
+                        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+                        let randomPart = '';
+                        for (let i = 0; i < 4; i++) {
+                            randomPart += chars.charAt(Math.floor(Math.random() * chars.length));
+                        }
 
-              // Masukkan ke dalam input
-              const regNumber = generateRegistrationNumber();
-              document.getElementById("registrationNumber").value = regNumber;
-            </script>
-          </div>
+                        return `${monthCode}-${randomPart}`;
+                    }
 
-          <div class="mb-3 d-flex align-items-center">
-            <label for="nama" class="form-label fw-light text-black me-2 mb-0" style="min-width: 80px;">Nama</label>
-            <input type="text" id="nama" name="nama" required class="form-control">
-          </div>
+                    // Masukkan ke dalam input
+                    const regNumber = generateRegistrationNumber();
+                    document.getElementById("registrationNumber").value = regNumber;
+                </script>
 
+                <div class="mb-3 row align-items-center">
+                    <label for="nama" class="col-sm-4 col-form-label fw-light text-black">Nama</label>
+                    <div class="col-sm-8">
+                        <input type="text" id="nama" name="nama" required class="form-control" >
+                    </div>
+                </div>
 
-          <div class="mb-3 d-flex align-items-center">
-            <label for="no_hp" class="form-label fw-light text-black me-2 mb-0" style="min-width: 80px;">No HP</label>
-            <input type="number" id="no_hp" name="no_hp" required class="form-control">
-          </div>
+                <div class="mb-3 row align-items-center">
+                    <label for="no_hp" class="col-sm-4 col-form-label fw-light text-black">No HP</label>
+                    <div class="col-sm-8">
+                        <input type="number" id="no_hp" name="no_hp" required class="form-control">
+                    </div>
+                </div>
 
-          <div class="mb-3 d-flex align-items-center">
-            <label for="berat_badan" class="form-label fw-light text-black me-2 mb-0" style="min-width: 80px;">Berat Badan</label>
-            <input type="number" id="berat_badan" name="berat_badan" required class="form-control">
-            <label for="satuan_berat_badan" class="form-label fw-light text-black me-2 mb-0 ">Kg</label>
-          </div>
+                <div class="mb-3 row align-items-center">
+                    <label for="berat_badan" class="col-sm-4 col-form-label fw-light text-black">Berat Badan</label>
+                    <div class="col-sm-6">
+                        <input type="number" id="berat_badan" name="berat_badan" required class="form-control" >
+                    </div>
+                    <label class="col-sm-2 col-form-label fw-light text-black">Kg</label>
+                </div>
 
-          <div class="mb-3 d-flex align-items-center">
-            <label for="tinggi_badan" class="form-label fw-light text-black me-2 mb-0" style="min-width: 80px;">Tinggi Badan</label>
-            <input type="number" id="tinggi_badan" name="tinggi_badan" required class="form-control">
-            <label for="satuan_berat_badan" class="form-label fw-light text-black me-2 mb-0 ">cm</label>
-          </div>
+                <div class="mb-3 row align-items-center">
+                    <label for="tinggi_badan" class="col-sm-4 col-form-label fw-light text-black">Tinggi Badan</label>
+                    <div class="col-sm-6">
+                        <input type="number" id="tinggi_badan" name="tinggi_badan" required class="form-control" >
+                    </div>
+                    <label class="col-sm-2 col-form-label fw-light text-black">cm</label>
+                </div>
 
-          <div class="mb-3 d-flex align-items-center">
-            <label class="form-label fw-light text-black d-block me-2 mb-0" style="min-width: 80px;">Aktifitas</label>
-            <div class="form-check form-check-inline">
-                <input type="radio" id="aktifitas_jarang" name="aktifitas" value="jarang" class="form-check-input" required>
-                <label for="aktifitas_jarang" class="form-check-label">Jarang</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input type="radio" id="aktifitas_sedang" name="aktifitas" value="sedang" class="form-check-input" required>
-                <label for="aktifitas_sedang" class="form-check-label">Sedang</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input type="radio" id="aktifitas_aktif" name="aktifitas" value="aktif" class="form-check-input" required>
-                <label for="aktifitas_aktif" class="form-check-label">Aktif</label>
-            </div>
-          </div>
+                <fieldset class="mb-3 row">
+                    <legend class="col-form-label col-sm-4 pt-0 fw-light text-black">Aktifitas</legend>
+                    <div class="col-sm-8 d-flex gap-3">
+                        <div class="form-check">
+                            <input type="radio" id="aktifitas_jarang" name="aktifitas" value="jarang" class="form-check-input" required>
+                            <label for="aktifitas_jarang" class="form-check-label">Jarang</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" id="aktifitas_sedang" name="aktifitas" value="sedang" class="form-check-input" required>
+                            <label for="aktifitas_sedang" class="form-check-label">Sedang</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" id="aktifitas_aktif" name="aktifitas" value="aktif" class="form-check-input" required>
+                            <label for="aktifitas_aktif" class="form-check-label">Aktif</label>
+                        </div>
+                    </div>
+                </fieldset>
 
-          <div class="mb-3 d-flex align-items-center">
-            <label class="form-label fw-light text-black d-block me-2 mb-0" style="min-width: 80px;">Alergi</label>
-            <div class="form-check form-check-inline">
-                <input type="radio" id="alergi_yes" name="alergi" value="ya" class="form-check-input" required>
-                <label for="alergi_yes" class="form-check-label">Ya</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input type="radio" id="alergi_no" name="alergi" value="tidak" class="form-check-input" required>
-                <label for="alergi_no" class="form-check-label">Tidak</label>
-            </div>
-          </div>
+                <fieldset class="mb-3 row">
+                    <legend class="col-form-label col-sm-4 pt-0 fw-light text-black">Alergi</legend>
+                    <div class="col-sm-8 d-flex gap-3">
+                        <div class="form-check">
+                            <input type="radio" id="alergi_yes" name="alergi" value="ya" class="form-check-input" required>
+                            <label for="alergi_yes" class="form-check-label">Ya</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" id="alergi_no" name="alergi" value="tidak" class="form-check-input" required>
+                            <label for="alergi_no" class="form-check-label">Tidak</label>
+                        </div>
+                    </div>
+                </fieldset>
 
-          <div class="d-flex justify-content-end gap-3 mt-4">
-              <button type="button" class="btn btn-secondary" onclick="window.location.href='/'">Cancel</button>
-              <button type="submit" class="btn btn-primary">Kirim</button>
-          </div>
-    </form>
-  </div>
-<footer class="text-center py-5">
-  <div class="container px-5">
-    <div class="text-white small">
-    <div class="mb-2">Nama Perusahaan</div>  
-    <div class="mb-2">Alamat</div>
-    <div class="mb-2">No. Telp</div>
-    <div class="mb-2">Social Media</div>
+                <div class="d-flex justify-content-end gap-3 mt-4">
+                    <button type="button" class="btn btn-secondary" onclick="window.location.href='/'">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Kirim</button>
+                </div>
+            </form>
+        </div>
     </div>
-    </div>
-</footer>
-  
+<!-- Footer-->
+  <footer class="bg-black text-center py-5">
+      <div class="container px-5">
+          <div class="text-white-50 small">
+              <div class="mb-2">&copy; Your Website 2023. All Rights Reserved.</div>
+              <a href="#!">Privacy</a>
+              <span class="mx-1">&middot;</span>
+              <a href="#!">Terms</a>
+              <span class="mx-1">&middot;</span>
+              <a href="#!">FAQ</a>
+          </div>
+      </div>
+  </footer>    
 </x-leandingpage>

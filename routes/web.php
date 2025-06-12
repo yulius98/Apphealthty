@@ -3,13 +3,23 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CekGratisController;
+use App\Http\Controllers\HomeShowController;
 
-Route::get('/', function () {
-    return view('Home');
-});
+
+Route::get('/', [HomeShowController::class, 'ProductShow'])->name('home');
 
 Route::get('/cekgratis', function () {
     return view('Cek_Gratis');
+});
+
+Route::get('/dashboard_barang', function () {
+    return view('administrator.dashboard_barang');
+});
+
+
+
+Route::get('/adminlogout', function () {
+    return view('Home');
 });
 
 Route::get('/dashboard', function () {
