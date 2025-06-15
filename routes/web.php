@@ -15,6 +15,13 @@ Route::get('/cekgratis', function () {
 Route::get('/dashboard_barang', function () {
     return view('administrator.dashboard_barang');
 });
+Route::get('/dashboard_cekgratis', function () {
+    return view('administrator.dashboard_cek_gratis');
+});
+
+Route::get('/dashboard_paket', function () {
+    return view('administrator.dashboard_paket');
+});
 
 
 

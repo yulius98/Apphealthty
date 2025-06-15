@@ -1,6 +1,5 @@
 @php use Illuminate\Support\Facades\Storage; @endphp
 
-
 <div class="container">
     @if ($errors->any())
         <div class="pt-3">
@@ -48,6 +47,7 @@
                             <label for="discount" class="col-sm-3 col-form-label">Discount*</label>
                             <div class="col-sm-9">
                                <select wire:model="discount" id="discount" name="discount" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[#723322] focus:ring-[#723322]">
+                                    <option value="no"></option>
                                     <option value="yes">Yes</option>
                                     <option value="no">No</option>
                                 </select>
@@ -138,7 +138,6 @@
                 </thead>
                 <tbody>
                     
-                    
                     @foreach ($dtbarang as $key => $value)
                     <tr>
                         <td>{{ $dtbarang->firstItem() + $key }}</td>
@@ -147,7 +146,7 @@
                         <td>{{ $value->discount }}</td>
                         <td>{{ $value->harga_diskon }}</td>
                         <td>{{ $value->description }}</td>
-                        <td><img src="{{ asset($value->image) }}" alt="Gambar Barang" class="p-0.5 object-contain rounded" 
+                        <td><img src="{{ asset('storage/'.$value->image) }}" alt="Gambar Barang" class="p-0.5 object-contain rounded" 
                                     style="width: 60px; height: 60px;"></td>
                         <td>
                             <div class="d-flex gap-1">

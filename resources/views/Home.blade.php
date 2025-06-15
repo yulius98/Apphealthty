@@ -124,7 +124,7 @@
                 <span class="block text-sm text-gray-500">{{ $product->description }}</span>
                 @if ($product->discount == "yes")
                     <div class="flex items-center gap-8">
-                        <h4 class="text-base font-bold  text-green-500 line-through"><del>Rp {{ number_format((float)$product->harga, 0, ',', '.') }}</del></h4>
+                        <h4 class="text-base font-bold  text-green-500 line-through" style=" font-size: medium; background-color: rgb(37, 217, 14);" ><del>Rp {{ number_format((float)$product->harga, 0, ',', '.') }}</del></h4>
                         <h5 class=" text-lg font-bold text-black">Rp {{ number_format((float)$product->harga_diskon, 0, ',', '.') }}</h5>
                     </div>
                 @else
@@ -143,18 +143,16 @@
       
   </section>
   <!-- Footer-->
-  <footer class="bg-black text-center py-5">
-      <div class="container px-5">
-          <div class="text-white-50 small">
-              <div class="mb-2">&copy; Your Website 2023. All Rights Reserved.</div>
-              <a href="#!">Privacy</a>
-              <span class="mx-1">&middot;</span>
-              <a href="#!">Terms</a>
-              <span class="mx-1">&middot;</span>
-              <a href="#!">FAQ</a>
-          </div>
-      </div>
-  </footer>
+    <footer class="py-4 mt-auto" style="background-color: rgb(11, 76, 3);">
+        <div class="container px-1">
+            <div class="text-white small">
+                <div class="mb-2">PT ABC</div>
+                <div class="mb-2">Jl. Contoh Alamat No.123, Jakarta</div>
+                <div class="mb-2">Email: xxx@gmail.com</div>
+                
+            </div>
+        </div>
+    </footer>
         
 </x-leandingpage>
 

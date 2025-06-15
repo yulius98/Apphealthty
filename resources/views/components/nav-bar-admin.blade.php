@@ -6,9 +6,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
-                <li class="nav-item"><a class="nav-link me-lg-3" href="/">Home</a></li>
-                <li class="nav-item"><a class="nav-link me-lg-3" href="/cekgratis">Dashboard Pendaftaran</a></li>
-                <li class="nav-item"><a class="nav-link me-lg-3" href="#download">Dashboard Barang</a></li>
+                
+                <li class="nav-item"><a class="nav-link me-lg-3" href="/cekgratis">Pendaftaran Pelanggan</a></li>
+                <li class="nav-item"><a class="nav-link me-lg-3" href="/dashboard_cekgratis">Cek Gratis</a></li>
+                <li class="nav-item"><a class="nav-link me-lg-3" href="/dashboard_barang">Tambah Barang</a></li>
+                <li class="nav-item"><a class="nav-link me-lg-3" href="#download">Tambah Paket</a></li>
                 
             </ul>
             <a href="/adminlogout" class="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0" >
